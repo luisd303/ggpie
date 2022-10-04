@@ -1,4 +1,4 @@
-PrepareData <- function(data, group_key = NULL, count_type = c("count", "full"), fill_color = NULL, label_info = c("count", "ratio", "all"),
+PrepareData <- function(data, group_key = NULL, count_type = c("count", "full"), fill_color = NULL, label_info = c("count", "ratio", "all", "dollars"),
                         label_split = "[[:space:]]+", label_color = "black") {
   # check parameters
   count_type <- match.arg(arg = count_type)
