@@ -220,7 +220,7 @@ ggdonut <- function(data, group_key = NULL, count_type = c("count", "full"), fil
     if (label_info == "dollars") {
       donut_label <- paste0("Total: ", scales::dollar(sum(data$count), accuracy = 1))
     } else {
-      donuts_label <- paste0("Total: ", sum(data$count))
+      donut_label <- paste0("Total: ", sum(data$count))
     }
                              
     pie_plot <- pie_plot + annotate("text",
