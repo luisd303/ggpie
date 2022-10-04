@@ -2,7 +2,7 @@ PrepareData <- function(data, group_key = NULL, count_type = c("count", "full"),
                         label_split = "[[:space:]]+", label_color = "black") {
   # check parameters
   count_type <- match.arg(arg = count_type)
-  label_info <- match.arg(arg = label_info)
+  # label_info <- match.arg(arg = label_info)
 
   # create plot data frame
   ## get group key
