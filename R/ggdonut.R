@@ -217,8 +217,14 @@ ggdonut <- function(data, group_key = NULL, count_type = c("count", "full"), fil
       scale_fill_manual(values = fill_color)
   }
   if (donut.label) {
+    if (label_info == "dollars") {
+      donut_label <- paste0("Total: ", scales::dollar(sum(data$count), accuracy = 1))
+    } else {
+      donuts_label <- paste0("Total: ", sum(data$count))
+    }
+                             
     pie_plot <- pie_plot + annotate("text",
-      x = 0, y = 0, label = paste0("Total: ", sum(data$count)),
+      x = 0, y = 0, label = donut_label,
       size = donut.label.size, colour = donut.label.color
     )
   }
