@@ -74,7 +74,7 @@ ggrosepie <- function(data, group_key = NULL, count_type = c("count", "full"), f
                       border_color = "black", border_size = 1) {
   # check parameters
   count_type <- match.arg(arg = count_type)
-  label_info <- match.arg(arg = label_info)
+  # label_info <- match.arg(arg = label_info)
 
   # prepare data
   if (length(group_key) == 1) {
