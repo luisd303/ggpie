@@ -127,12 +127,13 @@ ggnestedpie <- function(data, group_key = NULL, count_type = c("count", "full"),
     if (!"count" %in% colnames(data)) {
       stop("count column is missing in your data.")
     }
+    data$group <- paste(data[, group_key[1]], data[, group_key[2]], sep = "_")
   }
   main_data <- data %>%
     dplyr::group_by(.data[[group_key[1]]]) %>%
     dplyr::summarise(count = sum(count))
   colnames(main_data) <- c("group", "count")
-  sub_data <- data %>% dplyr::select(c(group_key[1], "count", group_key[2]))
+  sub_data <- data %>% dplyr::select(c("group", "count", group_key[2]))
   colnames(sub_data) <- c("group", "count", "subgroup")
   # get first non-unique index
   subgroup_unique_index <- match(unique(sub_data$subgroup), sub_data$subgroup)
