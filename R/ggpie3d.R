@@ -90,7 +90,7 @@ adapt2polygon <- function(data, fill_color = NULL, start_degrees = 0, tilt_degre
 #' ggpie3D(data = data, start_degrees = 0, label_split = NULL)
 ggpie3D <- function(data, group_key = NULL, count_type = c("count", "full"), fill_color = NULL, start_degrees = 0, tilt_degrees = -20,
                     height = 0.1, darken = 0.15, camera_eye = c(0, 3, 5), camera_look_at = c(0, 0, 0), show_label = TRUE,
-                    label_info = c("count", "ratio", "all"), label_split = "[[:space:]]+", label_size = 4) {
+                    label_info = c("count", "ratio", "all", "dollars"), label_split = "[[:space:]]+", label_size = 4) {
   # check parameters
   count_type <- match.arg(arg = count_type)
 
