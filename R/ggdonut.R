@@ -90,7 +90,7 @@ ggdonut <- function(data, group_key = NULL, count_type = c("count", "full"), fil
                     r0 = 1, r1 = 3, donut.label = TRUE, donut.label.size = 4, donut.label.color = "red") {
   # check parameters
   count_type <- match.arg(arg = count_type)
-  label_info <- match.arg(arg = label_info)
+  # label_info <- match.arg(arg = label_info)
   label_type <- match.arg(arg = label_type)
   label_pos <- match.arg(arg = label_pos)
 
