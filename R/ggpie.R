@@ -71,7 +71,7 @@
 #'   label_info = "all", label_type = "horizon", label_split = NULL,
 #'   label_size = 4, label_pos = "in", labal_threshold = 10
 #' )
-ggpie <- function(data, group_key = NULL, count_type = c("count", "full"), fill_color = NULL, label_info = c("count", "ratio", "all"),
+ggpie <- function(data, group_key = NULL, count_type = c("count", "full"), fill_color = NULL, label_info = c("count", "ratio", "all", "dollars"),
                   label_split = "[[:space:]]+", label_color = "black",
                   label_type = c("circle", "horizon", "none"), label_pos = c("in", "out"), label_gap = 0.05,
                   labal_threshold = NULL, label_size = 4, border_color = "black", border_size = 1) {
