@@ -41,7 +41,7 @@ PrepareData <- function(data, group_key = NULL, count_type = c("count", "full"),
   } else if (label_info == "all") {
     data$label <- paste0(data$count, " (", scales::percent(data$count / sum(data$count)), ")")
   } else if (label_info == "dollars") {
-    data$label <- scales::dollar(data$count)
+    data$label <- scales::dollar(data$count, accuracy = 1)
   } 
   # split label
   if (!is.null(label_split)) {
