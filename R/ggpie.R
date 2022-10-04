@@ -77,7 +77,7 @@ ggpie <- function(data, group_key = NULL, count_type = c("count", "full"), fill_
                   labal_threshold = NULL, label_size = 4, border_color = "black", border_size = 1) {
   # check parameters
   count_type <- match.arg(arg = count_type)
-  label_info <- match.arg(arg = label_info)
+  # label_info <- match.arg(arg = label_info)
   label_type <- match.arg(arg = label_type)
   label_pos <- match.arg(arg = label_pos)
 
