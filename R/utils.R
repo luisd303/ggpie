@@ -40,7 +40,9 @@ PrepareData <- function(data, group_key = NULL, count_type = c("count", "full"),
     data$label <- as.character(scales::percent(data$count / sum(data$count)))
   } else if (label_info == "all") {
     data$label <- paste0(data$count, " (", scales::percent(data$count / sum(data$count)), ")")
-  }
+  } else if (label_info == "dollars") {
+    data$label <- scales::dollar(data$count)
+  } 
   # split label
   if (!is.null(label_split)) {
     data$label <- gsub(pattern = label_split, replacement = "\n", x = data$label)
