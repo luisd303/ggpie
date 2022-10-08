@@ -87,7 +87,7 @@ ggdonut <- function(data, group_key = NULL, count_type = c("count", "full"), fil
                     label_split = "[[:space:]]+", label_color = "black",
                     label_type = c("circle", "horizon", "none"), label_pos = c("in", "out"), label_gap = 0.05,
                     labal_threshold = NULL, label_size = 4, border_color = "black", border_size = 1,
-                    r0 = 1, r1 = 3, donut.label = TRUE, donut.label.size = 4, donut.label.color = "red", add_total_label = T) {
+                    r0 = 1, r1 = 3, donut.label = TRUE, donut.label.size = 4, donut.label.color = "red", total.donut.label = T) {
   # check parameters
   count_type <- match.arg(arg = count_type)
   # label_info <- match.arg(arg = label_info)
@@ -218,7 +218,7 @@ ggdonut <- function(data, group_key = NULL, count_type = c("count", "full"), fil
   }
   if (donut.label) {
     donut_label <- ""
-    if (add_total_label){ donut_label <- "Total: " } 
+    if (total.donut.label){ donut_label <- "Total: " } 
     
     if (label_info == "dollars") {
       donut_label <- paste0(donut_label, scales::dollar(sum(data$count), accuracy = 1))
@@ -228,7 +228,8 @@ ggdonut <- function(data, group_key = NULL, count_type = c("count", "full"), fil
                              
     pie_plot <- pie_plot + annotate("text",
       x = 0, y = 0, label = donut_label,
-      size = donut.label.size, colour = donut.label.color
+      size = donut.label.size, colour = donut.label.color,
+      fontface = 'bold'
     )
   }
   pie_plot <- pie_plot + theme(plot.margin = unit(c(1, 1, 1, 1), "lines"))
